@@ -1,0 +1,3 @@
+﻿1. Enable-Migrations -ContextTypeName WebShopDbContext -MigrationsDirectory Migrations //This execute only once
+2. add-migration -ConfigurationTypeName WebShopCodeFirst.Migrations.Configuration "imeMigracije" //This execute every time when we change model or 
+3. update-database -ConfigurationTypeName WebShopCodeFirst.Migrations.Configuration //Can be executed any time
