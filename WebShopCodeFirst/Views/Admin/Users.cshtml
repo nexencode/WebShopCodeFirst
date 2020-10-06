@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Repository.Models.Users.User>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<main>
+    <div class="container-fluid">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Users</li>
+        </ol>
+        @*<div class="card mb-4">
+                <div class="card-body">
+                    DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                    <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                    .
+                </div>
+            </div>*@
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                All Users
+                <a href="../Admin/CreateUser" class="btn btn-info pull-right">Add New<i class="custom-icon-left fas fa-plus"></i></a>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <td>@Html.DisplayNameFor(model => model.UserId)</td>
+                                <td>@Html.DisplayNameFor(model => model.FirstName)</td>
+                                <td>@Html.DisplayNameFor(model => model.LastName)</td>
+                                <td>@Html.DisplayNameFor(model => model.Username)</td>
+                                <td>@Html.DisplayNameFor(model => model.Role.RoleName)</td>
+                                <td>@Html.DisplayNameFor(model => model.Address.AddressId)</td>
+                                <td>@Html.DisplayNameFor(model => model.Email)</td>
+                                <td>@Html.DisplayNameFor(model => model.Age)</td>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <td>@Html.DisplayNameFor(model => model.UserId)</td>
+                                <td>@Html.DisplayNameFor(model => model.FirstName)</td>
+                                <td>@Html.DisplayNameFor(model => model.LastName)</td>
+                                <td>@Html.DisplayNameFor(model => model.Username)</td>
+                                <td>@Html.DisplayNameFor(model => model.Role.RoleName)</td>
+                                <td>@Html.DisplayNameFor(model => model.Address.AddressId)</td>
+                                <td>@Html.DisplayNameFor(model => model.Email)</td>
+                                <td>@Html.DisplayNameFor(model => model.Age)</td>
+                                <th>Actions</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>@Html.DisplayFor(model => item.UserId)</td>
+                                <td>@Html.DisplayFor(model => item.FirstName)</td>
+                                <td>@Html.DisplayFor(model => item.LastName)</td>
+                                <td>@Html.DisplayFor(model => item.Username)</td>
+                                <td>@Html.LabelFor(model => item.Role.RoleName)</td>
+                                <td>@Html.DisplayFor(model => item.Address.AddressId)</td>
+                                <td>@Html.DisplayFor(model => item.Email)</td>
+                                <td>@Html.DisplayFor(model => item.Age)</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "EditUser", new { UserId = item.UserId }) |
+                                    @Html.ActionLink("Details", "Details", new { UserId = item.UserId, @class = "fas fa - trash - alt" }) |
+                                    @Html.ActionLink("Delete", "DeleteUser", new { UserId = item.UserId })
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

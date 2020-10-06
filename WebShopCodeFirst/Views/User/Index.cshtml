@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Repository.Models.Users.User>
+
+@{
+    ViewBag.Title = "List Users";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateUser")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Address.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role.RoleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var user in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modeluser => user.Address.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.Role.RoleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.Telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modeluser => user.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditUser", new { UserId = user.UserId }) |
+            @Html.ActionLink("Details", "Details", new { id=user.UserId }) |
+            @Html.ActionLink("Delete", "DeleteUser", new { UserId=user.UserId })
+        </td>
+    </tr>
+}
+
+</table>

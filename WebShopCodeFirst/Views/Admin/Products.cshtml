@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Repository.Models.Products.Product>
+
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <main>
+        <div class="container-fluid">
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li class="breadcrumb-item active">Products</li>
+            </ol>
+            @*<div class="card mb-4">
+                <div class="card-body">
+                    DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                    <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                    .
+                </div>
+            </div>*@
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table mr-1"></i>
+                    Products Details
+                    <a href="../Admin/CreateProduct" class="btn btn-info pull-right">Add New<i class="custom-icon-left fas fa-plus"></i></a>
+
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <td>@Html.DisplayNameFor(model => model.ProductId)</td>
+                                    <td>@Html.DisplayNameFor(model => model.ProductName)</td>
+                                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                                    <td>@Html.DisplayNameFor(model => model.IsActive)</td>
+                                    <th>@Html.DisplayNameFor(model => model.HaveDiscount)</th>
+                                    <th>@Html.DisplayNameFor(model => model.IsDigital)</th>
+                                    <th>@Html.DisplayNameFor(model => model.IsService)</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td>@Html.DisplayNameFor(model => model.ProductId)</td>
+                                    <td>@Html.DisplayNameFor(model => model.ProductName)</td>
+                                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                                    <td>@Html.DisplayNameFor(model => model.IsActive)</td>
+                                    <th>@Html.DisplayNameFor(model => model.HaveDiscount)</th>
+                                    <th>@Html.DisplayNameFor(model => model.IsDigital)</th>
+                                    <th>@Html.DisplayNameFor(model => model.IsService)</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>@Html.DisplayFor(model => item.ProductId)</td>
+                                    <td>@Html.DisplayFor(model => item.ProductName)</td>
+                                    <th>@Html.DisplayFor(model => item.Price)</th>
+                                    <th>@Html.DisplayFor(model => item.Quantity)</th>
+                                    <td>@Html.DisplayFor(model => item.IsActive)</td>
+                                    <th>@Html.DisplayFor(model => item.HaveDiscount)</th>
+                                    <th>@Html.DisplayFor(model => item.IsDigital)</th>
+                                    <th>@Html.DisplayFor(model => item.IsService)</th>
+                                    <td>
+                                        @Html.ActionLink("Edit", "EditProduct", new { ProductId = item.ProductId }) |
+                                        @Html.ActionLink("Details", "Details", new { ProductId = item.ProductId }) |
+                                        @Html.ActionLink("Delete", "DeleteProduct", new { ProductId = item.ProductId })
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>

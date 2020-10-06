@@ -127,48 +127,139 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\WebShopDbContext.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009082139035_InitialCreate.cs" />
-    <Compile Include="Migrations\202009082139035_InitialCreate.designer.cs">
-      <DependentUpon>202009082139035_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009082155460_AddedOrderItem.cs" />
-    <Compile Include="Migrations\202009082155460_AddedOrderItem.designer.cs">
-      <DependentUpon>202009082155460_AddedOrderItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Orders\Currancy.cs" />
-    <Compile Include="Models\Orders\Licence.cs" />
-    <Compile Include="Models\Orders\Order.cs" />
-    <Compile Include="Models\Orders\OrderDetaills.cs" />
-    <Compile Include="Models\Orders\OrderItem.cs" />
-    <Compile Include="Models\Products\Category.cs" />
-    <Compile Include="Models\Products\Product.cs" />
-    <Compile Include="Models\Products\ProductLocation.cs" />
-    <Compile Include="Models\Products\Warehouse.cs" />
-    <Compile Include="Models\Users\Action.cs" />
-    <Compile Include="Models\Users\Address.cs" />
-    <Compile Include="Models\Users\Country.cs" />
-    <Compile Include="Models\Users\Role.cs" />
-    <Compile Include="Models\Users\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminStyle\dist\401.html" />
+    <Content Include="AdminStyle\dist\404.html" />
+    <Content Include="AdminStyle\dist\500.html" />
+    <Content Include="AdminStyle\dist\assets\demo\chart-area-demo.js" />
+    <Content Include="AdminStyle\dist\assets\demo\chart-bar-demo.js" />
+    <Content Include="AdminStyle\dist\assets\demo\chart-pie-demo.js" />
+    <Content Include="AdminStyle\dist\assets\demo\datatables-demo.js" />
+    <Content Include="AdminStyle\dist\assets\img\error-404-monochrome.svg" />
+    <Content Include="AdminStyle\dist\charts.html" />
+    <Content Include="AdminStyle\dist\css\styles.css" />
+    <Content Include="AdminStyle\dist\index.html" />
+    <Content Include="AdminStyle\dist\js\scripts.js" />
+    <Content Include="AdminStyle\dist\layout-sidenav-light.html" />
+    <Content Include="AdminStyle\dist\layout-static.html" />
+    <Content Include="AdminStyle\dist\login.html" />
+    <Content Include="AdminStyle\dist\password.html" />
+    <Content Include="AdminStyle\dist\register.html" />
+    <Content Include="AdminStyle\dist\tables.html" />
+    <Content Include="AdminStyle\scripts\build-assets.js" />
+    <Content Include="AdminStyle\scripts\build-pug.js" />
+    <Content Include="AdminStyle\scripts\build-scripts.js" />
+    <Content Include="AdminStyle\scripts\build-scss.js" />
+    <Content Include="AdminStyle\scripts\clean.js" />
+    <Content Include="AdminStyle\scripts\render-assets.js" />
+    <Content Include="AdminStyle\scripts\render-pug.js" />
+    <Content Include="AdminStyle\scripts\render-scripts.js" />
+    <Content Include="AdminStyle\scripts\render-scss.js" />
+    <Content Include="AdminStyle\scripts\sb-watch.js" />
+    <Content Include="AdminStyle\scripts\start-debug.js" />
+    <Content Include="AdminStyle\scripts\start.js" />
+    <Content Include="AdminStyle\src\assets\demo\chart-area-demo.js" />
+    <Content Include="AdminStyle\src\assets\demo\chart-bar-demo.js" />
+    <Content Include="AdminStyle\src\assets\demo\chart-pie-demo.js" />
+    <Content Include="AdminStyle\src\assets\demo\datatables-demo.js" />
+    <Content Include="AdminStyle\src\assets\img\error-404-monochrome.svg" />
+    <Content Include="AdminStyle\src\js\scripts.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\Iphone 10.jpg" />
+    <Content Include="Content\Img\Nokia-3310.jpeg" />
+    <Content Include="Content\Img\product-1.jpg" />
+    <Content Include="Content\Img\product-2.jpg" />
+    <Content Include="Content\Img\product-3.jpg" />
+    <Content Include="Content\Img\xiaomi-mi-10.jpg" />
+    <Content Include="Content\UserStyle\css\loginstyle.css" />
+    <Content Include="Content\UserStyle\css\shop-homepage.css" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\UserStyle\vendor\jquery\jquery.js" />
+    <Content Include="Content\UserStyle\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\UserStyle\vendor\jquery\jquery.slim.js" />
+    <Content Include="Content\UserStyle\vendor\jquery\jquery.slim.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Migrations\MigrationsInfo.txt" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="AdminStyle\src\pug\layouts\authentication.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\dashboard.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\error.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\includes\footer.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\includes\head\css.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\includes\head\icons.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\includes\head\meta.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\includes\head\title.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\includes\navigation\sidenav.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\includes\navigation\topnav.pug" />
+    <Content Include="AdminStyle\src\pug\layouts\includes\scripts.pug" />
+    <Content Include="AdminStyle\src\pug\pages\401.pug" />
+    <Content Include="AdminStyle\src\pug\pages\404.pug" />
+    <Content Include="AdminStyle\src\pug\pages\500.pug" />
+    <Content Include="AdminStyle\src\pug\pages\charts.pug" />
+    <Content Include="AdminStyle\src\pug\pages\includes\datatable.pug" />
+    <Content Include="AdminStyle\src\pug\pages\includes\page-header.pug" />
+    <Content Include="AdminStyle\src\pug\pages\index.pug" />
+    <Content Include="AdminStyle\src\pug\pages\layout-sidenav-light.pug" />
+    <Content Include="AdminStyle\src\pug\pages\layout-static.pug" />
+    <Content Include="AdminStyle\src\pug\pages\login.pug" />
+    <Content Include="AdminStyle\src\pug\pages\password.pug" />
+    <Content Include="AdminStyle\src\pug\pages\register.pug" />
+    <Content Include="AdminStyle\src\pug\pages\tables.pug" />
+    <Content Include="AdminStyle\src\scss\layout\_authentication.scss" />
+    <Content Include="AdminStyle\src\scss\layout\_dashboard-default.scss" />
+    <Content Include="AdminStyle\src\scss\layout\_dashboard-fixed.scss" />
+    <Content Include="AdminStyle\src\scss\layout\_error.scss" />
+    <Content Include="AdminStyle\src\scss\navigation\sidenav\_sidenav-dark.scss" />
+    <Content Include="AdminStyle\src\scss\navigation\sidenav\_sidenav-light.scss" />
+    <Content Include="AdminStyle\src\scss\navigation\sidenav\_sidenav.scss" />
+    <Content Include="AdminStyle\src\scss\navigation\_nav.scss" />
+    <Content Include="AdminStyle\src\scss\navigation\_topnav.scss" />
+    <Content Include="AdminStyle\src\scss\styles.scss" />
+    <Content Include="AdminStyle\src\scss\variables\_navigation.scss" />
+    <Content Include="AdminStyle\src\scss\variables\_spacing.scss" />
+    <Content Include="AdminStyle\src\scss\_global.scss" />
+    <Content Include="AdminStyle\src\scss\_variables.scss" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\UserStyle\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\UserStyle\vendor\jquery\jquery.min.map" />
+    <Content Include="Content\UserStyle\vendor\jquery\jquery.slim.min.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -194,9 +285,33 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\CreateUser.cshtml" />
+    <Content Include="Views\User\ErrorUser.cshtml" />
+    <Content Include="Views\User\EditUser.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\CreateProduct.cshtml" />
+    <Content Include="Views\Product\EditProduct.cshtml" />
+    <Content Include="Views\Product\CustomerIndex.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Dashboard.cshtml" />
+    <Content Include="Views\Admin\Products.cshtml" />
+    <Content Include="Views\Admin\CreateProduct.cshtml" />
+    <Content Include="Views\Admin\EditProduct.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Admin\CreateUser.cshtml" />
+    <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\Shared\_ShopLayout.cshtml" />
+    <Content Include="Views\User\ShowItem.cshtml" />
+    <Content Include="Views\User\Shop.cshtml" />
+    <Content Include="Views\User\Checkout.cshtml" />
+    <Content Include="Views\User\PlaceOrder.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -212,12 +327,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009082139035_InitialCreate.resx">
-      <DependentUpon>202009082139035_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009082155460_AddedOrderItem.resx">
-      <DependentUpon>202009082155460_AddedOrderItem.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{e466c43f-e34c-4115-aecc-a939a45eb0a6}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
